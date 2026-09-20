@@ -1,0 +1,86 @@
+:root {
+  --ink: #1a120c;
+  --paper: #f6efe4;
+  --card: #fffaf3;
+  --line: #e4d5c3;
+  --rose: #c45c26;
+  --teal: #0f6e6b;
+  --gold: #e2b039;
+  --ok: #2f7d4a;
+  --bad: #b42318;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Trebuchet MS", "Avenir Next", sans-serif;
+  background: radial-gradient(1200px 600px at 10% -10%, #ffe7c2 0%, var(--paper) 45%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+a { color: var(--teal); }
+.wrap { max-width: 420px; margin: 0 auto; padding: 20px 16px 48px; }
+.brand {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #6d5a48;
+}
+.brand b { color: var(--ink); letter-spacing: 0; text-transform: none; font-size: 22px; }
+h1 { font-size: 28px; line-height: 1.15; margin: 10px 0 8px; }
+p.lead { margin: 0 0 18px; color: #5c4a3a; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 8px 24px rgba(80, 40, 10, 0.06);
+}
+.store { font-weight: 700; }
+.muted { color: #6d5a48; font-size: 14px; }
+.btn {
+  display: block; width: 100%; text-align: center;
+  background: var(--ink); color: #fff; text-decoration: none;
+  border: 0; border-radius: 999px; padding: 14px 16px;
+  font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 10px;
+}
+.btn.alt { background: var(--teal); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.choices { display: grid; gap: 8px; margin-top: 12px; }
+.choice {
+  width: 100%; text-align: left; padding: 12px 14px;
+  border-radius: 12px; border: 1px solid var(--line);
+  background: #fff; font-size: 16px; cursor: pointer;
+}
+.choice.pick { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15,110,107,0.15); }
+.choice.good { border-color: var(--ok); background: #eef8f0; }
+.choice.bad { border-color: var(--bad); background: #fdecec; }
+.code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 34px; letter-spacing: 0.18em;
+  text-align: center; padding: 10px 0;
+}
+.pill {
+  display: inline-block; background: #f3e2c7; border-radius: 999px;
+  padding: 4px 10px; font-size: 12px; margin-right: 6px;
+}
+.player {
+  background: #1a120c; color: #f6efe4; border-radius: 14px; padding: 14px;
+}
+.player .bar {
+  height: 6px; background: #3a2a20; border-radius: 99px; overflow: hidden; margin: 10px 0;
+}
+.player .bar > i { display: block; height: 100%; width: 35%; background: var(--gold); }
+.err { color: var(--bad); font-size: 14px; }
+.ok { color: var(--ok); font-weight: 700; }
+footer { margin-top: 24px; font-size: 12px; color: #8a7460; text-align: center; }
+input[type="text"] {
+  width: 100%; padding: 12px; font-size: 20px; letter-spacing: 0.2em;
+  text-transform: uppercase; text-align: center;
+  border-radius: 12px; border: 1px solid var(--line);
+}
+.list a.store-link {
+  display: block; padding: 12px; border: 1px solid var(--line);
+  border-radius: 12px; margin: 8px 0; text-decoration: none; color: inherit;
+  background: #fff;
+}
