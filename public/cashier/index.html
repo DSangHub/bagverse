@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Counter</title>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><b>Counter</b><span id="shop">store</span></div>
+    <h1>Honor a treat code</h1>
+    <p class="lead">Type the 6 letters. Green = give the small treat. Code dies after one use.</p>
+    <div class="card">
+      <input id="code" type="text" maxlength="8" placeholder="CODE" autocomplete="off" />
+      <button class="btn" id="go">Check</button>
+      <p id="msg" class="muted"></p>
+    </div>
+    <a class="btn ghost" href="/">All shops</a>
+  </div>
+  <script src="/js/shared.js"></script>
+  <script>
+    const storeId = Bag.storeId();
+    Bag.get("/api/stores/" + storeId).then((d) => {
+      if (d.store) document.getElementById("shop").textContent = d.store.name;
+    });
+    document.getElementById("go").onclick = async () => {
+      const code = document.getElementById("code").value;
+      const out = await Bag.post("/api/redeem", { storeId, code });
+      const el = document.getElementById("msg");
+      if (out.ok) {
+        el.className = "ok";
+        el.textContent = "Give the " + out.treat + " · " + out.remaining + " left this week";
+      } else {
+        el.className = "err";
+        el.textContent = out.error || "No";
+      }
+    };
+  </script>
+</body>
+</html>

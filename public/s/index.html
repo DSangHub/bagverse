@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>This bag</title>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><b>Bag</b><span id="where"></span></div>
+    <h1 id="title">This bag</h1>
+    <p class="lead" id="lead"></p>
+    <div class="card" style="padding:10px">
+      <img src="/art/bag-sign.svg" alt="TrickBag puzzle and Bagtunes guitar" style="width:100%;border-radius:12px;display:block" />
+    </div>
+    <div class="card" id="panel">Loading…</div>
+  </div>
+  <script src="/js/shared.js"></script>
+  <script>
+    const id = location.pathname.split("/").filter(Boolean)[1] || Bag.storeId();
+    Bag.rememberStore(id);
+    Bag.get("/api/stores/" + id).then((data) => {
+      if (data.error) {
+        document.getElementById("panel").textContent = "Unknown store QR.";
+        return;
+      }
+      const s = data.store;
+      document.getElementById("where").textContent = s.neighborhood;
+      document.getElementById("title").textContent = s.name;
+      document.getElementById("lead").textContent =
+        "One scan. Play a trick, get a " + s.treat + ", hear this block.";
+      document.getElementById("panel").innerHTML = `
+        <span class="pill">${data.treatsLeft} treats left this week</span>
+        <a class="btn alt" href="/trickbag/?store=${s.id}">Play a trick</a>
+        <a class="btn ghost" href="/bagtunes/?store=${s.id}">Just hear local songs</a>
+      `;
+    });
+  </script>
+</body>
+</html>

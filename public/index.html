@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bag scan</title>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><b>Bag</b><span>scan landing</span></div>
+    <h1>Scan the bag.</h1>
+    <p class="lead">Kids play a trick. Locals hear a song. Perks at the counter you already use.</p>
+    <div class="card" style="padding:10px">
+      <img src="/art/bag-sign.svg" alt="Scan the bag: puzzle and guitar" style="width:100%;border-radius:12px;display:block" />
+    </div>
+    <div class="card list" id="stores">Loading shops…</div>
+    <footer>Print one QR per store: /s/ROSE · /s/711-J · /s/OAK</footer>
+  </div>
+  <script src="/js/shared.js"></script>
+  <script>
+    Bag.get("/api/stores").then(({ stores }) => {
+      const box = document.getElementById("stores");
+      box.innerHTML = stores.map((s) => `
+        <a class="store-link" href="/s/${s.id}">
+          <div class="store">${s.name}</div>
+          <div class="muted">${s.neighborhood} · treat: ${s.treat}</div>
+        </a>`).join("");
+    });
+  </script>
+</body>
+</html>
