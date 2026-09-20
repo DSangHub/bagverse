@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-label="TrikBag puzzle and Bagtunes guitar">
+  <rect width="400" height="560" fill="#f3e2c7"/>
+  <rect x="18" y="18" width="364" height="524" fill="none" stroke="#c45c26" stroke-width="6"/>
+  <text x="200" y="78" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-size="42" font-weight="700" fill="#0f3f3d">TRIKBAG</text>
+  <text x="200" y="122" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-size="36" font-weight="700" fill="#c45c26">BAGTUNES</text>
+  <g transform="translate(46,170)">
+    <rect x="0" y="0" width="52" height="52" rx="8" fill="#0f6e6b"/>
+    <rect x="58" y="0" width="52" height="52" rx="8" fill="#c45c26"/>
+    <rect x="0" y="58" width="52" height="52" rx="8" fill="#e2b039"/>
+    <rect x="58" y="58" width="52" height="52" rx="8" fill="#1a120c"/>
+    <path d="M130 20 h34 v34 h-18 v18 h-34 v-34 h18 z" fill="#0f6e6b"/>
+    <path d="M168 4 h34 v34 h-18 v18 h-16 z" fill="#c45c26"/>
+  </g>
+  <g transform="translate(250,200)">
+    <ellipse cx="40" cy="90" rx="38" ry="48" fill="#0f6e6b"/>
+    <rect x="34" y="0" width="12" height="56" rx="3" fill="#1a120c"/>
+    <circle cx="40" cy="90" r="12" fill="#f3e2c7"/>
+    <text x="78" y="40" font-size="28" fill="#c45c26">♪</text>
+    <text x="70" y="78" font-size="22" fill="#0f6e6b">♫</text>
+    <text x="86" y="110" font-size="18" fill="#c45c26">♩</text>
+  </g>
+  <text x="200" y="500" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-size="16" fill="#1a120c">Scan. Play a trick. Hear this block.</text>
+</svg>
