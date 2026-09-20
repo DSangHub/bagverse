@@ -84,3 +84,14 @@ input[type="text"] {
   border-radius: 12px; margin: 8px 0; text-decoration: none; color: inherit;
   background: #fff;
 }
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.intro p { margin: 0 0 10px; color: #5c4a3a; font-size: 17px; line-height: 1.4; }
+.pair { display: grid; gap: 10px; }
+@media (min-width: 520px) {
+  .wrap { max-width: 560px; }
+  .pair { grid-template-columns: 1fr 1fr; align-items: start; }
+}
