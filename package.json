@@ -1,0 +1,9 @@
+{
+  "name": "bagverse",
+  "version": "0.1.0",
+  "description": "TrickBag + Bagtunes connected bag apps",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
